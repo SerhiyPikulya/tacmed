@@ -1,0 +1,33 @@
+.header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    &__logo
+        height: 45px //фіксація висоти логотипу на випадок його заміни
+        max-width: 250px
+        img
+            height: 100% //фіксація висоти логотипу на випадок його заміни
+    &__official
+        color: #ffffff
+        font-size: 12px
+        font-weight: 500
+        text-align: center
+        span
+            display: block
+            font-size: 18px
+    &__phone
+        display: block
+        color: #ffffff
+        font-size: 18px
+        font-weight: 700
+        text-align: right
+        text-decoration: none
+        &:hover
+            text-decoration: none //прибираємо ховер ефект 
+            color: #ffffff
+    &__contacts
+        text-align: right
+        //display: flex //або вирівнюємо по правій стороні через флекси
+        //flex-direction: column
+        //align-items: flex-end
+    

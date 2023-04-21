@@ -21,7 +21,7 @@ function styles() {
   return src("src/sass/**/*.+(scss|sass)")
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(rename({suffix: '.min', prefix: ''}))
-        .pipe(autoprefixer({browsers: ['last 2 versions'], cascade: false}))
+        .pipe(autoprefixer())
         .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(dest("src/css"))
         .pipe(browserSync.stream());
