@@ -5,6 +5,18 @@
     .advantages
         padding-right: 5px
         padding-left: 5px
+    .carousel
+        ul
+            display: flex
+            justify-content: center
+            li
+                margin: 0 8px
+                font-size: 25px
+                button
+                    display: none
+            .slick-active
+                    color: $main-color
+    
 
 @media (max-width: 767px)
     .advantages
@@ -13,6 +25,11 @@
         &__item
             font-size: 12px
             width: 182px
+    .carousel
+        &__inner
+            width: 100%
+            img
+                width: 100%
 
 @media (max-width: 575px)
     .header
