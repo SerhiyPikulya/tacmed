@@ -3,9 +3,11 @@
         padding-right: 6px
         padding-left: 6px
     .advantages
-        padding-right: 5px
-        padding-left: 5px
+        padding-right: 6px
+        padding-left: 6px
     .carousel
+        padding-right: 6px
+        padding-left: 6px
         ul
             display: flex
             justify-content: center
@@ -16,7 +18,15 @@
                     display: none
             .slick-active
                     color: $main-color
-    
+    .catalog
+        &__content
+            justify-content: space-evenly
+    .catalog-item
+            margin-left: 5px
+            margin-right: 5px
+    .reviews
+        &__wrapper
+            padding: 0 10px
 
 @media (max-width: 767px)
     .advantages
@@ -30,6 +40,13 @@
             width: 100%
             img
                 width: 100%
+    .catalog
+        &__tabs
+            flex-direction: column
+        &__tab
+            &:nth-child(2)
+                margin: 15px 5px
+
 
 @media (max-width: 575px)
     .header
@@ -61,4 +78,17 @@
     .consultation
         &__desc
             font-size: 18px
+    .reviews
+        &__item
+            display: block
+        &__img
+            display: block
+            margin: 0 auto 15px
+        &__name
+            text-align: center
+        &__comment
+            width: 80%
+            margin: 0 auto
+        &__descr
+            text-align: center
 
