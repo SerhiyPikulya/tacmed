@@ -55,4 +55,30 @@ $(document).ready(function(){
 
     toggleSlide('.catalog-item__link');
     toggleSlide('.catalog-item__back');
+
+    //Modal
+
+    $('[data-modal=consultation]').on('click', function() {
+        $('.overlay, #consultation').fadeIn('slow');
+    });
+
+    //закриття модальних вікон
+    $('.modal__close').on('click', function() {
+        $('.overlay, #consultation, #thanks, #order').fadeOut('0.75');
+    });
+
+    //Кнопка Купити
+    //$('.button_mini').on('click', function() {
+    //    $('.overlay, #order').fadeIn('slow');
+    //});
+
+    //each - перебір елементів, виконання функції для кожного з них
+    $('.button_mini').each(function(i) {
+        $(this).on('click', function() {
+            //Заміняємо текст в формі.
+            // $('.catalog-item__subtitle').eq(i).text() - знаходимо і отримуємо текст з того блоку по якому клікнули
+            $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
+            $('.overlay, #order').fadeIn('slow');
+        });
+    });
 });
