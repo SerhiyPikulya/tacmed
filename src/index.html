@@ -109,9 +109,9 @@
 					Просто заповніть форму заявки<br>
 					і ми передзвоними вам протягом 10 хвилин
 			</div>
-			<form class="feed-form" action="#">
-				<input name="name" type="text" placeholder="Ваше ім'я" required>
-				<input name="phone" type="tel" placeholder="Ваш телефон" required>
+			<form id="consultation-form" class="feed-form" action="#">
+				<input name="name" type="text" placeholder="Ваше ім'я">
+				<input name="phone" type="tel" placeholder="Ваш телефон">
 				<!-- <input type="number" placeholder="Ваш телефон"> -->
 				<input name="email" type="email" placeholder="Ваша email">
 				<!-- <textarea style="resize: none" name=""></textarea> -->
@@ -466,7 +466,7 @@
 			<div class="modal__subtitle">Просто заповніть форму заявки</div>
 			<div class="modal__descr">і ми передзвонимо вам протягом 10 хвилин</div>
 				<form class="feed-form feed-form_mt25" action="#">
-					<input name="name" type="text" placeholder="Ваше ім'я" required>
+					<input name="name" type="text" placeholder="Ваше ім'я" required minlength="3">
 					<input name="phone" type="tel" placeholder="Ваш телефон" required>
 					<input name="email" type="email" placeholder="Ваша email">
 		
@@ -479,7 +479,7 @@
 			<div class="modal__subtitle">Ваше замовлення</div>
 			<div class="modal__descr">Турнікет</div>
 				<form class="feed-form feed-form_mt25" action="#">
-					<input name="name" type="text" placeholder="Ваше ім'я" required>
+					<input name="name" type="text" placeholder="Ваше ім'я" required maxlength="10">
 					<input name="phone" type="tel" placeholder="Ваш телефон" required>
 					<input name="email" type="email" placeholder="Ваша email">
 		
@@ -497,6 +497,7 @@
 	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="js/slick.min.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
 	<script src="js/script.js"></script>
 </body>
 </html>
