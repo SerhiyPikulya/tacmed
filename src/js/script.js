@@ -136,7 +136,31 @@ $(document).ready(function(){
     valideForms('#consultation-form');
     valideForms('#consultation form');
 
-    //переклад плагіна валідації з дистрибутива
+    //переклад плагіна валідації з дистрибутива, вміст файла jquery.maskedinput.min.js
     !function(a){"function"==typeof define&&define.amd?define(["jquery","../jquery.validate.min"],a):"object"==typeof module&&module.exports?module.exports=a(require("jquery")):a(jQuery)}(function(a){return a.extend(a.validator.messages,{required:"Це поле необхідно заповнити.",remote:"Будь ласка, введіть правильне значення.",email:"Будь ласка, введіть коректну адресу електронної пошти.",url:"Будь ласка, введіть коректний URL.",date:"Будь ласка, введіть коректну дату.",dateISO:"Будь ласка, введіть коректну дату у форматі ISO.",number:"Будь ласка, введіть число.",digits:"Вводите потрібно лише цифри.",creditcard:"Будь ласка, введіть правильний номер кредитної карти.",equalTo:"Будь ласка, введіть таке ж значення ще раз.",extension:"Будь ласка, виберіть файл з правильним розширенням.",maxlength:a.validator.format("Будь ласка, введіть не більше {0} символів."),minlength:a.validator.format("Будь ласка, введіть не менше {0} символів."),rangelength:a.validator.format("Будь ласка, введіть значення довжиною від {0} до {1} символів."),range:a.validator.format("Будь ласка, введіть число від {0} до {1}."),max:a.validator.format("Будь ласка, введіть число, менше або рівно {0}."),min:a.validator.format("Будь ласка, введіть число, більше або рівно {0}.")}),a});
+
+    // Маска введення номера
+    $('input[name=phone]').mask("+38 (999) 999-99-99");
+
+    $('form').submit(function(e) {
+        e.preventDefault();
+
+        if (!$(this).valid()) {
+            return;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "mailer/smart.php",
+            data: $(this).serialize()
+        }).done(function() {
+            $(this).find("input").val("");
+            $('#consultation, #order').fadeOut();
+            $('.overlay, #thanks').fadeIn('slow');
+
+            $('form').trigger('reset');
+        });
+        return false;
+    });
 
 });
