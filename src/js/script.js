@@ -174,7 +174,8 @@ $(document).ready(function(){
     });
 
     // Smooth scroll Плавна анімація скролу посилань
-    $("a[href^='#']").click(function(){
+    // $("a[href^='#']").click(function(){ - починається з #
+    $("a[href=#up]").click(function(){
         const _href = $(this).attr("href");
         $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
         return false;
